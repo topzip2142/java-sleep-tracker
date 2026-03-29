@@ -29,7 +29,7 @@ public class ChronotypeUserAnalyzer implements SleepAnalyzable {
 
         List<SleepingSession> nightSessions = sessions.stream()
                 .filter(this::isNightSession)
-                .toList();
+                .collect(Collectors.toList());
 
         if (nightSessions.isEmpty()) {
             return new SleepAnalysisResult("Хронотип пользователя", PIGEON_TEXT);
